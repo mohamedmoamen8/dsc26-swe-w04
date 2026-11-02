@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["id", "itemCode", "fromBranch", "toBranch", "quantity", "requestedAt", "status"],
+  "properties": {
+    "id": {"type": "string"},
+    "itemCode": {"type": "string"},
+    "fromBranch": {"type": "string"},
+    "toBranch": {"type": "string"},
+    "quantity": {"type": "integer", "minimum": 1},
+    "requestedAt": {"type": "string", "format": "date-time"},
+    "status": {"type": "string", "enum": ["pending", "approved", "rejected"]},
+    "priority": {"type": "string", "enum": ["urgent", "high", "normal"]},
+    "reserve": {"type": "integer", "minimum": 0},
+    "memo": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}
